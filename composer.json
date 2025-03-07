@@ -1,6 +1,7 @@
 {
     "name": "hexlet/code",
     "description": "My first project",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
@@ -11,6 +12,9 @@
             "name": "Gabrusevich Valeriy",
             "email": "gabrvp@yandex.ru"
         }
+    ],
+    "bin": [
+    	"bin/brain-games"
     ],
     "require": {}
 }
