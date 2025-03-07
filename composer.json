@@ -1,0 +1,16 @@
+{
+    "name": "hexlet/code",
+    "description": "My first project",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabrusevich Valeriy",
+            "email": "gabrvp@yandex.ru"
+        }
+    ],
+    "require": {}
+}
