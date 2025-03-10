@@ -18,7 +18,7 @@ function playEven()
     for ($i = 0; $i < NUMBER_OF_CORRECT; $i++) {
         $randomNumb = rand(MIN_VALUE, MAX_VALUE); #Генерируем случайное число
         line("Question: {$randomNumb}");
-        $randomNumb % 2 === 0 ? $reportCorrect = 'yes': $reportCorrect = 'no';
+        $randomNumb % 2 === 0 ? $reportCorrect = 'yes' : $reportCorrect = 'no';
         $reportOfUser = prompt('Your answer');
         if ($reportCorrect === $reportOfUser) {
             line('Correct!');
@@ -28,5 +28,5 @@ function playEven()
             return;
         }
     }
-    line ("Congratulations, %s!", $name);
+    line("Congratulations, %s!", $name);
 }
