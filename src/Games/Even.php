@@ -11,6 +11,7 @@ const MAX_VALUE = 99;
 
 function playEven()
 {
+    
     welcome();
     $result = 0;
     line('Answer "yes" if the number is even, otherwise answer "no".');
