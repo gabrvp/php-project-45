@@ -2,31 +2,23 @@
 
 namespace BrainGames\Games\Even;
 
+use function BrainGames\Engine\executeGameTemplate;
 use function cli\line;
 use function cli\prompt;
 
 const MIN_VALUE = 1; #Минимальное значение для рандомного числа
 const MAX_VALUE = 99; #Максимальное значение для рандомного числа
-const NUMBER_OF_CORRECT = 3; #Количество верных ответов для победы
+const DESCRIPTION_OF_GAME = 'Answer "yes" if the number is even, otherwise answer "no".'; #Описание игры
 
-function playEven()
+function playEven(): void
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('Answer "yes" if the number is even, otherwise answer "no".');
-    for ($i = 0; $i < NUMBER_OF_CORRECT; $i++) {
+    $round = function () {
         $randomNumb = rand(MIN_VALUE, MAX_VALUE); #Генерируем случайное число
         line("Question: {$randomNumb}");
-        $randomNumb % 2 === 0 ? $reportCorrect = 'yes' : $reportCorrect = 'no';
-        $reportOfUser = prompt('Your answer');
-        if ($reportCorrect === $reportOfUser) {
-            line('Correct!');
-        } else {
-            line("'%s!' is wrong answer ;(. Correct answer was '%s!'", $reportOfUser, $reportCorrect);
-            line("Let's try again, %s!", $name);
-            return;
-        }
-    }
-    line("Congratulations, %s!", $name);
+        $answerOfUser = prompt('Your answer');
+        $answerCorrect = $randomNumb % 2 === 0 ? 'yes' : 'no';
+
+        return [$answerOfUser, $answerCorrect];
+    };
+    executeGameTemplate(DESCRIPTION_OF_GAME, $round);
 }
