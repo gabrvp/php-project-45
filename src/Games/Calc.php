@@ -6,7 +6,7 @@ use function BrainGames\Engine\executeGameTemplate;
 use function cli\line;
 use function cli\prompt;
 
-const DESCRIPTION_OF_GAME = 'What is the result of the expression?'; #Описание игры
+const DESCRIPTION_OF_GAME = 'What is the result of the expression?';
 const MIN_VALUE = 1; #Минимальное значение для рандомного числа
 const MAX_VALUE = 99; #Максимальное значение для рандомного числа
 const ARRAY_OPERATIONS = ['+', '-', '*']; #Массив с возможными операторами
