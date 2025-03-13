@@ -23,6 +23,6 @@ function executeGameTemplate(string $descriptionOfGame, callable $functionOfGame
             return;
         }
     }
-    line("Congratulations, {$name}");
+    line("Congratulations, {$name}!");
     return;
 }

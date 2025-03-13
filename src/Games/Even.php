@@ -6,7 +6,7 @@ use function BrainGames\Engine\executeGameTemplate;
 use function cli\line;
 use function cli\prompt;
 
-const DESCRIPTION_OF_GAME = 'Answer "yes" if the number is even, otherwise answer "no".'; #Описание игры
+const DESCRIPTION_OF_GAME = 'Answer "yes" if the number is even, otherwise answer "no".';
 const MIN_VALUE = 1; #Минимальное значение для рандомного числа
 const MAX_VALUE = 99; #Максимальное значение для рандомного числа
 
