@@ -19,7 +19,7 @@ function executeGameTemplate(string $descriptionOfGame, callable $functionOfGame
             line('Correct!');
         } else {
             line("'{$answerOfUser}' is wrong answer ;(. Correct answer was '{$answerCorrect}'");
-            line("Let's try again, {$name}");
+            line("Let's try again, {$name}!");
             return;
         }
     }
