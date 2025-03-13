@@ -19,8 +19,6 @@ function playCalc(): void
         $operationKey = array_rand(ARRAY_OPERATIONS, 1);
         $randomOpearation = ARRAY_OPERATIONS[$operationKey];
         $expressionString = "{$randomNumb1} {$randomOpearation} {$randomNumb2}";
-        line("Question: {$expressionString}");
-        $answerOfUser = (int) prompt('Your answer');
         switch ($randomOpearation) {
             case '+':
                 $answerCorrect = $randomNumb1 + $randomNumb2;
@@ -32,6 +30,8 @@ function playCalc(): void
                 $answerCorrect = $randomNumb1 * $randomNumb2;
                 break;
         }
+        line("Question: {$expressionString}");
+        $answerOfUser = (int) prompt('Your answer');
         return [$answerOfUser, $answerCorrect];
     };
     executeGameTemplate(DESCRIPTION_OF_GAME, $round);
