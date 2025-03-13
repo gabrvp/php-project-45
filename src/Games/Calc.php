@@ -2,42 +2,37 @@
 
 namespace BrainGames\Games\Calc;
 
+use function BrainGames\Engine\executeGameTemplate;
 use function cli\line;
 use function cli\prompt;
 
-function playCalc()
+const DESCRIPTION_OF_GAME = 'What is the result of the expression?'; #Описание игры
+const MIN_VALUE = 1; #Минимальное значение для рандомного числа
+const MAX_VALUE = 99; #Максимальное значение для рандомного числа
+const ARRAY_OPERATIONS = ['+', '-', '*']; #Массив с возможными операторами
+
+function playCalc(): void
 {
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('What is the result of the expression?');
-    for ($i = 0; $i < 3; $i++) {
-        $randomNumb1 = rand(1, 99);
-        $randomNumb2 = rand(1, 99);
-        $arrayOfOperations = ['+', '-', '*'];
-        $key = array_rand($arrayOfOperations, 1);
-        $randomOpearation = $arrayOfOperations[$key];
+    $round = function () {
+        $randomNumb1 = rand(MIN_VALUE, MAX_VALUE);
+        $randomNumb2 = rand(MIN_VALUE, MAX_VALUE);
+        $operationKey = array_rand(ARRAY_OPERATIONS, 1);
+        $randomOpearation = ARRAY_OPERATIONS[$operationKey];
         $expressionString = "{$randomNumb1} {$randomOpearation} {$randomNumb2}";
         line("Question: {$expressionString}");
         switch ($randomOpearation) {
             case '+':
-                $reportCorrect = $randomNumb1 + $randomNumb2;
+                $answerCorrect = $randomNumb1 + $randomNumb2;
                 break;
             case '-':
-                $reportCorrect = $randomNumb1 - $randomNumb2;
+                $answerCorrect = $randomNumb1 - $randomNumb2;
                 break;
             case '*':
-                $reportCorrect = $randomNumb1 * $randomNumb2;
+                $answerCorrect = $randomNumb1 * $randomNumb2;
                 break;
         }
-        $reportOfUser = prompt('Your answer');
-        if ($reportCorrect == $reportOfUser) {
-            line('Correct!');
-        } else {
-            line("{$reportOfUser} is wrong answer ;(. Correct answer was {$reportCorrect}");
-            line("Let's try again, %s!", $name);
-            return;
-        }
-    }
-    line("Congratulations, %s!", $name);
+        $answerOfUser = (int) prompt('Your answer');
+        return [$answerOfUser, $answerCorrect];
+    };
+    executeGameTemplate(DESCRIPTION_OF_GAME, $round);
 }
