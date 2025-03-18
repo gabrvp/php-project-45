@@ -5,14 +5,14 @@ namespace BrainGames\Engine;
 use function BrainGames\Cli\welcome;
 use function cli\line;
 
-const NUMBER_OF_ROUNDS = 3; #Кол-во раундов в каждой игре
+const ROUNDS_COUNT = 3; #Кол-во раундов в каждой игре
 
 function executeGameTemplate(string $descriptionOfGame, callable $functionOfGame): void
 {
     $name = welcome();
     line($descriptionOfGame);
 
-    for ($i = 0; $i < NUMBER_OF_ROUNDS; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         #"Вытаскиваем" ответ пользователя и корректный ответ из функции конкретной игры
         [$answerOfUser, $answerCorrect] = $functionOfGame();
         if ($answerOfUser === $answerCorrect) {
