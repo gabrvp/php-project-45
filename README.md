@@ -22,12 +22,12 @@ make install
 
 ## asciinema:
 
-* ### [brain-even] (https://asciinema.org/a/n4OORewwsH6PKOkTQlcg4a2oV)
+* ### [brain-even](https://asciinema.org/a/n4OORewwsH6PKOkTQlcg4a2oV)
 
-* ### [brain-calc] (https://asciinema.org/a/AbbSM3VkXkCmJw5FMdDjsNIB0)
+* ### [brain-calc](https://asciinema.org/a/AbbSM3VkXkCmJw5FMdDjsNIB0)
 
-* ### [brain-gcd] (https://asciinema.org/a/n1CSPDItWkUnkSm8fPknXws8l)
+* ### [brain-gcd](https://asciinema.org/a/n1CSPDItWkUnkSm8fPknXws8l)
 
-* ### [brain-progression] (https://asciinema.org/a/xgHb9UovFCGn3qzTx7Vb58zR3)
+* ### [brain-progression](https://asciinema.org/a/xgHb9UovFCGn3qzTx7Vb58zR3)
 
-* ### [brain-prime] (https://asciinema.org/a/1kP2feWfbQFdEkS5v5yHLZ6xe)
+* ### [brain-prime](https://asciinema.org/a/1kP2feWfbQFdEkS5v5yHLZ6xe)
