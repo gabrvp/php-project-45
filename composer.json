@@ -1,11 +1,8 @@
 {
     "name": "hexlet/code",
-    "description": "My first project",
+    "description": "Games that will help you stretch your brain",
     "license": "MIT",
     "autoload": {
-        "psr-4": {
-            "Hexlet\\Code\\": "src/"
-        },
         "files": [
             "src/Cli.php",
             "src/Engine.php",
@@ -15,7 +12,6 @@
             "src/Games/Progression.php",
             "src/Games/Prime.php"
         ]
-        
     },
     "authors": [
         {
@@ -30,7 +26,6 @@
         "bin/brain-gcd",
         "bin/brain-prime",
         "bin/brain-progression"
-
     ],
     "require": {
         "wp-cli/php-cli-tools": "^0.12.4"
