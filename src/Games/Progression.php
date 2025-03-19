@@ -3,8 +3,6 @@
 namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\executeGameTemplate;
-use function cli\line;
-use function cli\prompt;
 
 const DESCRIPTION_OF_GAME = 'What number is missing in the progression?'; #Описание игры
 const MIN_LENGTH_OF_ARRAY = 5; #Минимальная длина генерируемого массива
@@ -33,10 +31,8 @@ function playProgression(): void
         $randomArrayIndex = rand(0, $lengthOfArray - 1); #Выбираем индекс случайного элемента массива
         $answerCorrect = $generatedArray[$randomArrayIndex];
         $generatedArray[$randomArrayIndex] = '..';
-        $stringGeneratedArray = implode(' ', $generatedArray);
-        line("Question: {$stringGeneratedArray}");
-        $answerOfUser = (int) prompt('Your answer');
-        return [$answerOfUser, $answerCorrect];
+        $questionText = implode(' ', $generatedArray);
+        return [$questionText, $answerCorrect];
     };
     executeGameTemplate(DESCRIPTION_OF_GAME, $round);
 }

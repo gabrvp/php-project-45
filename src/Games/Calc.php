@@ -3,8 +3,6 @@
 namespace BrainGames\Games\Calc;
 
 use function BrainGames\Engine\executeGameTemplate;
-use function cli\line;
-use function cli\prompt;
 
 const DESCRIPTION_OF_GAME = 'What is the result of the expression?';
 const MIN_VALUE = 1; #Минимальное значение для рандомного числа
@@ -18,7 +16,7 @@ function playCalc(): void
         $randomNumb2 = rand(MIN_VALUE, MAX_VALUE);
         $operationKey = array_rand(ARRAY_OPERATIONS, 1);
         $randomOpearation = ARRAY_OPERATIONS[$operationKey];
-        $expressionString = "{$randomNumb1} {$randomOpearation} {$randomNumb2}";
+        $questionText = "{$randomNumb1} {$randomOpearation} {$randomNumb2}";
         switch ($randomOpearation) {
             case '+':
                 $answerCorrect = $randomNumb1 + $randomNumb2;
@@ -32,9 +30,7 @@ function playCalc(): void
             default:
                 return null;
         }
-        line("Question: {$expressionString}");
-        $answerOfUser = (int) prompt('Your answer');
-        return [$answerOfUser, $answerCorrect];
+        return [$questionText, $answerCorrect];
     };
     executeGameTemplate(DESCRIPTION_OF_GAME, $round);
 }
