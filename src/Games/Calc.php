@@ -29,6 +29,8 @@ function playCalc(): void
             case '*':
                 $answerCorrect = $randomNumb1 * $randomNumb2;
                 break;
+            default:
+                return null;
         }
         line("Question: {$expressionString}");
         $answerOfUser = (int) prompt('Your answer');
