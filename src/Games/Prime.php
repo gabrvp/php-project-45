@@ -11,20 +11,20 @@ const MAX_VALUE = 99; #Максимальное значение для ранд
 function playPrime(): void
 {
     $round = function () {
-        $questionText = $randomNumb = rand(MIN_VALUE, MAX_VALUE);
-        $answerCorrect = checkPrime($randomNumb) ? 'yes' : 'no';
+        $questionText = $randomNumber = rand(MIN_VALUE, MAX_VALUE);
+        $answerCorrect = checkPrime($randomNumber) ? 'yes' : 'no';
         return [$questionText, $answerCorrect];
     };
     executeGameTemplate(DESCRIPTION_OF_GAME, $round);
 }
 
-function checkPrime(int $randomNumb): bool
+function checkPrime(int $randomNumber): bool
 {
-    if ($randomNumb < 2) {
+    if ($randomNumber < 2) {
         return false;
     }
-    for ($i = 2; $i <= $randomNumb / 2; $i++) {
-        if ($randomNumb % $i === 0) {
+    for ($i = 2; $i <= $randomNumber / 2; $i++) {
+        if ($randomNumber % $i === 0) {
             return false;
         }
     }

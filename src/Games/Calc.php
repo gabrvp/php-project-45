@@ -12,20 +12,20 @@ const ARRAY_OPERATIONS = ['+', '-', '*']; #Массив с возможными 
 function playCalc(): void
 {
     $round = function () {
-        $randomNumb1 = rand(MIN_VALUE, MAX_VALUE);
-        $randomNumb2 = rand(MIN_VALUE, MAX_VALUE);
+        $randomNumber1 = rand(MIN_VALUE, MAX_VALUE);
+        $randomNumber2 = rand(MIN_VALUE, MAX_VALUE);
         $operationKey = array_rand(ARRAY_OPERATIONS, 1);
         $randomOpearation = ARRAY_OPERATIONS[$operationKey];
-        $questionText = "{$randomNumb1} {$randomOpearation} {$randomNumb2}";
+        $questionText = "{$randomNumber1} {$randomOpearation} {$randomNumber2}";
         switch ($randomOpearation) {
             case '+':
-                $answerCorrect = $randomNumb1 + $randomNumb2;
+                $answerCorrect = $randomNumber1 + $randomNumber2;
                 break;
             case '-':
-                $answerCorrect = $randomNumb1 - $randomNumb2;
+                $answerCorrect = $randomNumber1 - $randomNumber2;
                 break;
             case '*':
-                $answerCorrect = $randomNumb1 * $randomNumb2;
+                $answerCorrect = $randomNumber1 * $randomNumber2;
                 break;
             default:
                 return null;
