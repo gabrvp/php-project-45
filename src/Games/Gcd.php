@@ -21,7 +21,7 @@ function playGcd(): void
     executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
 }
 
-function searchGcd($randomNumber1, $randomNumber2)
+function searchGcd(int $randomNumber1, int $randomNumber2)
 {
     while ($randomNumber2 > 0) {
         $result = 0;
