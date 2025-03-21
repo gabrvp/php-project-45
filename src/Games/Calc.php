@@ -11,7 +11,7 @@ const ARRAY_OPERATIONS = ['+', '-', '*']; #Массив с возможными 
 
 function playCalc(): void
 {
-    $playRound = function (){
+    $playRound = function () {
         $randomNumber1 = rand(MIN_VALUE, MAX_VALUE);
         $randomNumber2 = rand(MIN_VALUE, MAX_VALUE);
         $operationKey = array_rand(ARRAY_OPERATIONS, 1);

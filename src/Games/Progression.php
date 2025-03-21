@@ -14,24 +14,24 @@ const MAX_VALUE_FIRST_ELEMENT = 5; #Максимальное значение п
 
 function generateArray(): array
 {
-    $generatedArray = []; #Сгенерированный массив. Задаем пустую переменную
+    $progressionNumbers = []; #Сгенерированный массив. Задаем пустую переменную
     $lengthOfArray = rand(MIN_LENGTH_OF_ARRAY, MAX_LENGTH_OF_ARRAY);
     $stepSize = rand(MIN_STEP_SIZE, MAX_STEP_SIZE);
     $valueFirstElement = rand(MIN_VALUE_FIRST_ELEMENT, MAX_VALUE_FIRST_ELEMENT);
     for ($i = 0; $i < $lengthOfArray; $i++) {
-        $generatedArray[$i] = $valueFirstElement + $i * $stepSize;
+        $progressionNumbers[$i] = $valueFirstElement + $i * $stepSize;
     }
-    return [$generatedArray, $lengthOfArray];
+    return [$progressionNumbers, $lengthOfArray];
 }
 
 function playProgression(): void
 {
     $playRound = function () {
-        [$generatedArray, $lengthOfArray] = generateArray();
+        [$progressionNumbers, $lengthOfArray] = generateArray();
         $randomArrayIndex = rand(0, $lengthOfArray - 1); #Выбираем индекс случайного элемента массива
-        $answerCorrect = $generatedArray[$randomArrayIndex];
-        $generatedArray[$randomArrayIndex] = '..';
-        $questionText = implode(' ', $generatedArray);
+        $answerCorrect = $progressionNumbers[$randomArrayIndex];
+        $progressionNumbers[$randomArrayIndex] = '..';
+        $questionText = implode(' ', $progressionNumbers);
         return [$questionText, $answerCorrect];
     };
     executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
