@@ -26,7 +26,7 @@ function generateArray(): array
 
 function playProgression(): void
 {
-    $round = function () {
+    $playRound = function () {
         [$generatedArray, $lengthOfArray] = generateArray();
         $randomArrayIndex = rand(0, $lengthOfArray - 1); #Выбираем индекс случайного элемента массива
         $answerCorrect = $generatedArray[$randomArrayIndex];
@@ -34,5 +34,5 @@ function playProgression(): void
         $questionText = implode(' ', $generatedArray);
         return [$questionText, $answerCorrect];
     };
-    executeGameTemplate(DESCRIPTION_OF_GAME, $round);
+    executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
 }

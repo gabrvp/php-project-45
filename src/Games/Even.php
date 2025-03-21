@@ -10,11 +10,11 @@ const MAX_VALUE = 99; #Максимальное значение для ранд
 
 function playEven(): void
 {
-    $round = function () {
+    $playRound = function () {
         $questionText = $randomNumber = rand(MIN_VALUE, MAX_VALUE); #Генерируем случайное число
         $answerCorrect = $randomNumber % 2 === 0 ? 'yes' : 'no';
 
         return [$questionText, $answerCorrect];
     };
-    executeGameTemplate(DESCRIPTION_OF_GAME, $round);
+    executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
 }

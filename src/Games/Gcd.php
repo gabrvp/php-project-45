@@ -10,7 +10,7 @@ const MAX_VALUE = 99; #Максимальное значение для ранд
 
 function playGcd(): void
 {
-    $round = function () {
+    $playRound = function () {
         $randomNumber1 = rand(MIN_VALUE, MAX_VALUE);
         $randomNumber2 = rand(MIN_VALUE, MAX_VALUE);
         $questionText = "{$randomNumber1} {$randomNumber2}";
@@ -23,5 +23,5 @@ function playGcd(): void
         $answerCorrect = $randomNumber1;
         return [$questionText, $answerCorrect];
     };
-    executeGameTemplate(DESCRIPTION_OF_GAME, $round);
+    executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
 }

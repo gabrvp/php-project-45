@@ -10,12 +10,12 @@ const MAX_VALUE = 99; #Максимальное значение для ранд
 
 function playPrime(): void
 {
-    $round = function () {
+    $playRound = function () {
         $questionText = $randomNumber = rand(MIN_VALUE, MAX_VALUE);
         $answerCorrect = checkPrime($randomNumber) ? 'yes' : 'no';
         return [$questionText, $answerCorrect];
     };
-    executeGameTemplate(DESCRIPTION_OF_GAME, $round);
+    executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
 }
 
 function checkPrime(int $randomNumber): bool
