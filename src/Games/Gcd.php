@@ -14,14 +14,14 @@ function playGcd(): void
         $randomNumber1 = rand(MIN_VALUE, MAX_VALUE);
         $randomNumber2 = rand(MIN_VALUE, MAX_VALUE);
         $questionText = "{$randomNumber1} {$randomNumber2}";
-        [$randomNumber1] = searchGcd($randomNumber1, $randomNumber2);
+        $randomNumber1 = searchGcd($randomNumber1, $randomNumber2);
         $answerCorrect = $randomNumber1;
         return [$questionText, $answerCorrect];
     };
     runGame(DESCRIPTION, $playRound);
 }
 
-function searchGcd(int $randomNumber1, int $randomNumber2)
+function searchGcd(int $randomNumber1, int $randomNumber2): int
 {
     while ($randomNumber2 > 0) {
         $result = 0;
@@ -29,5 +29,5 @@ function searchGcd(int $randomNumber1, int $randomNumber2)
         $randomNumber1 = $randomNumber2;
         $randomNumber2 = $result;
     }
-    return [$randomNumber1];
+    return $randomNumber1;
 }

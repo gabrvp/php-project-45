@@ -12,13 +12,13 @@ function playPrime(): void
 {
     $playRound = function () {
         $questionText = $randomNumber = rand(MIN_VALUE, MAX_VALUE);
-        $answerCorrect = checkPrime($randomNumber) ? 'yes' : 'no';
+        $answerCorrect = isPrime($randomNumber) ? 'yes' : 'no';
         return [$questionText, $answerCorrect];
     };
     runGame(DESCRIPTION, $playRound);
 }
 
-function checkPrime(int $randomNumber): bool
+function isPrime(int $randomNumber): bool
 {
     if ($randomNumber < 2) {
         return false;
