@@ -12,7 +12,7 @@ const MAX_STEP_SIZE = 10;
 const MIN_VALUE_FIRST_ELEMENT = -5;
 const MAX_VALUE_FIRST_ELEMENT = 5;
 
-function generateArray(): array
+function generateProgression(): array
 {
     $progressionNumbers = [];
     $lengthOfArray = rand(MIN_LENGTH_OF_ARRAY, MAX_LENGTH_OF_ARRAY);
@@ -27,7 +27,7 @@ function generateArray(): array
 function playProgression(): void
 {
     $playRound = function () {
-        [$progressionNumbers, $lengthOfArray] = generateArray();
+        [$progressionNumbers, $lengthOfArray] = generateProgression();
         $randomArrayIndex = rand(0, $lengthOfArray - 1);
         $answerCorrect = $progressionNumbers[$randomArrayIndex];
         $progressionNumbers[$randomArrayIndex] = '..';
