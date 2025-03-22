@@ -11,9 +11,9 @@ const MAX_VALUE = 99;
 function playPrime(): void
 {
     $playRound = function () {
-        $questionText = $randomNumber = rand(MIN_VALUE, MAX_VALUE);
-        $answerCorrect = isPrime($randomNumber) ? 'yes' : 'no';
-        return [$questionText, $answerCorrect];
+        $question = $randomNumber = rand(MIN_VALUE, MAX_VALUE);
+        $answer = isPrime($randomNumber) ? 'yes' : 'no';
+        return [$question, $answer];
     };
     runGame(DESCRIPTION, $playRound);
 }

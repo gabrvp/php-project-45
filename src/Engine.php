@@ -13,11 +13,11 @@ function runGame(string $description, callable $playGame): void
     $name = welcome();
     line($description);
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        [$questionText, $answerCorrect] = $playGame();
-        line("Question: {$questionText}");
+        [$question, $answer] = $playGame();
+        line("Question: {$question}");
         $answerOfUser = prompt('Your answer');
-        if ($answerOfUser != $answerCorrect) {
-            line("'{$answerOfUser}' is wrong answer ;(. Correct answer was '{$answerCorrect}'");
+        if ($answerOfUser != $answer) {
+            line("'{$answerOfUser}' is wrong answer ;(. Correct answer was '{$answer}'");
             line("Let's try again, {$name}!");
             return;
         }

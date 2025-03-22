@@ -13,10 +13,10 @@ function playGcd(): void
     $playRound = function () {
         $randomNumber1 = rand(MIN_VALUE, MAX_VALUE);
         $randomNumber2 = rand(MIN_VALUE, MAX_VALUE);
-        $questionText = "{$randomNumber1} {$randomNumber2}";
+        $question = "{$randomNumber1} {$randomNumber2}";
         $randomNumber1 = searchGcd($randomNumber1, $randomNumber2);
-        $answerCorrect = $randomNumber1;
-        return [$questionText, $answerCorrect];
+        $answer = $randomNumber1;
+        return [$question, $answer];
     };
     runGame(DESCRIPTION, $playRound);
 }

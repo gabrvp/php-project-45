@@ -11,10 +11,10 @@ const MAX_VALUE = 99;
 function playEven(): void
 {
     $playRound = function () {
-        $questionText = $randomNumber = rand(MIN_VALUE, MAX_VALUE);
-        $answerCorrect = $randomNumber % 2 === 0 ? 'yes' : 'no';
+        $question = $randomNumber = rand(MIN_VALUE, MAX_VALUE);
+        $answer = $randomNumber % 2 === 0 ? 'yes' : 'no';
 
-        return [$questionText, $answerCorrect];
+        return [$question, $answer];
     };
     runGame(DESCRIPTION, $playRound);
 }
