@@ -2,9 +2,9 @@
 
 namespace BrainGames\Games\Prime;
 
-use function BrainGames\Engine\executeGameTemplate;
+use function BrainGames\Engine\runGame;
 
-const DESCRIPTION_OF_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const MIN_VALUE = 1;
 const MAX_VALUE = 99;
 
@@ -15,7 +15,7 @@ function playPrime(): void
         $answerCorrect = checkPrime($randomNumber) ? 'yes' : 'no';
         return [$questionText, $answerCorrect];
     };
-    executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
+    runGame(DESCRIPTION, $playRound);
 }
 
 function checkPrime(int $randomNumber): bool

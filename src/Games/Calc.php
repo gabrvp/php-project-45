@@ -2,9 +2,9 @@
 
 namespace BrainGames\Games\Calc;
 
-use function BrainGames\Engine\executeGameTemplate;
+use function BrainGames\Engine\runGame;
 
-const DESCRIPTION_OF_GAME = 'What is the result of the expression?';
+const DESCRIPTION = 'What is the result of the expression?';
 const MIN_VALUE = 1;
 const MAX_VALUE = 99;
 const ARRAY_OPERATIONS = ['+', '-', '*'];
@@ -20,7 +20,7 @@ function playCalc(): void
         $answerCorrect = calculateAnswerCorrect($randomNumber1, $randomNumber2, $randomOpearation);
         return [$questionText, $answerCorrect];
     };
-    executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
+    runGame(DESCRIPTION, $playRound);
 }
 
 function calculateAnswerCorrect(int $randomNumber1, int $randomNumber2, string $randomOpearation): ?int

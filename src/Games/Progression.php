@@ -2,9 +2,9 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\Engine\executeGameTemplate;
+use function BrainGames\Engine\runGame;
 
-const DESCRIPTION_OF_GAME = 'What number is missing in the progression?';
+const DESCRIPTION = 'What number is missing in the progression?';
 const MIN_LENGTH_OF_ARRAY = 5;
 const MAX_LENGTH_OF_ARRAY = 10;
 const MIN_STEP_SIZE = 1;
@@ -34,5 +34,5 @@ function playProgression(): void
         $questionText = implode(' ', $progressionNumbers);
         return [$questionText, $answerCorrect];
     };
-    executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
+    runGame(DESCRIPTION, $playRound);
 }

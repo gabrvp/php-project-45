@@ -2,9 +2,9 @@
 
 namespace BrainGames\Games\Gcd;
 
-use function BrainGames\Engine\executeGameTemplate;
+use function BrainGames\Engine\runGame;
 
-const DESCRIPTION_OF_GAME = 'Find the greatest common divisor of given numbers.';
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 const MIN_VALUE = 1;
 const MAX_VALUE = 99;
 
@@ -18,7 +18,7 @@ function playGcd(): void
         $answerCorrect = $randomNumber1;
         return [$questionText, $answerCorrect];
     };
-    executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
+    runGame(DESCRIPTION, $playRound);
 }
 
 function searchGcd(int $randomNumber1, int $randomNumber2)

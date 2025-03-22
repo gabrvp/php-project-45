@@ -8,10 +8,10 @@ use function cli\prompt;
 
 const ROUNDS_COUNT = 3;
 
-function executeGameTemplate(string $descriptionOfGame, callable $playGame): void
+function runGame(string $description, callable $playGame): void
 {
     $name = welcome();
-    line($descriptionOfGame);
+    line($description);
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         [$questionText, $answerCorrect] = $playGame();
         line("Question: {$questionText}");
