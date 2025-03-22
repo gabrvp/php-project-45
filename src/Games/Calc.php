@@ -23,7 +23,7 @@ function playCalc(): void
     executeGameTemplate(DESCRIPTION_OF_GAME, $playRound);
 }
 
-function calculateAnswerCorrect($randomNumber1, $randomNumber2, $randomOpearation): ?int
+function calculateAnswerCorrect(int $randomNumber1, int $randomNumber2, string $randomOpearation): ?int
 {
     switch ($randomOpearation) {
         case '+':
