@@ -4,9 +4,9 @@ namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Engine\executeGameTemplate;
 
-const DESCRIPTION_OF_GAME = 'Find the greatest common divisor of given numbers.'; #Описание игры
-const MIN_VALUE = 1; #Минимальное значение для рандомного числа
-const MAX_VALUE = 99; #Максимальное значение для рандомного числа
+const DESCRIPTION_OF_GAME = 'Find the greatest common divisor of given numbers.';
+const MIN_VALUE = 1;
+const MAX_VALUE = 99;
 
 function playGcd(): void
 {

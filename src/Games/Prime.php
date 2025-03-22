@@ -4,9 +4,9 @@ namespace BrainGames\Games\Prime;
 
 use function BrainGames\Engine\executeGameTemplate;
 
-const DESCRIPTION_OF_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".'; #Описание игры
-const MIN_VALUE = 1; #Минимальное значение для рандомного числа
-const MAX_VALUE = 99; #Максимальное значение для рандомного числа
+const DESCRIPTION_OF_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const MIN_VALUE = 1;
+const MAX_VALUE = 99;
 
 function playPrime(): void
 {

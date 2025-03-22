@@ -6,14 +6,13 @@ use function BrainGames\Cli\welcome;
 use function cli\line;
 use function cli\prompt;
 
-const ROUNDS_COUNT = 3; #Кол-во раундов в каждой игре
+const ROUNDS_COUNT = 3;
 
 function executeGameTemplate(string $descriptionOfGame, callable $playGame): void
 {
     $name = welcome();
     line($descriptionOfGame);
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        #"Вытаскиваем" текст вопроса и корректный ответ из функции конкретной игры
         [$questionText, $answerCorrect] = $playGame();
         line("Question: {$questionText}");
         $answerOfUser = prompt('Your answer');
